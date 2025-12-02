@@ -1,12 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  Here is my 404 page
-</body>
-</html>
+import Link from "next/link";
+import Layout from "../components/layout";
+
+export default function Custom404() {
+return (
+<Layout>
+    <section className="row" style={{ textAlign: "center", padding: "60px 20px" }}>
+    <h1 className="section-title">Сторінку не знайдено</h1>
+    <p style={{ fontSize: "18px", marginTop: "20px" }}>
+    На жаль, такої сторінки не існує або вона була переміщена.
+    </p>
+
+    <button type="button" className="button button--contrast" style={{ marginTop: "30px" }}>
+    <Link href="/" className="button__link">
+    <span className="button__text">Повернутися на головну</span>
+    <div className="button__icon">
+        <svg
+                className="button__arrow"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+        >
+            <g
+                    id="right-arrow"
+                    stroke="#F8F9F8"
+                    strokeWidth="6"
+                    strokeLinecap="round"
+            >
+                <line x1="5" y1="50" x2="95" y2="50" />
+                <line x1="58" y1="13" x2="95" y2="50" />
+                <line x1="58" y1="87" x2="95" y2="50" />
+            </g>
+        </svg>
+    </div>
+    </Link>
+    </button>
+    </section>
+</Layout>
+);
+}
